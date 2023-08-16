@@ -30,7 +30,7 @@ const getRandomNumber = () => {
   // .random gives 0-1    .228   .999 .785
   // times 10!            22.8   99.9  78.5
   let randomNum = Math.floor(Math.random() * 100);
-  return randomNum;
+    return randomNum;
   // return it
 }
 
@@ -61,19 +61,72 @@ const returnCount = (ans1, ans2, ans3) => {
 // let count2 = returnCount("hello", "im", "Chase");
 
 
-// 4-Write a function that will return True or False if a number is divisible by 3 & 5
 
 
+// 4-Write a function that will count the letters of a string and add it to a total. 
 
+// Step 1, declare a function.
+
+// step2, inside the function, declare a variable total and set it to zero.
+
+
+// step 3,remove the white spaces and other extra carectors from string.
+
+
+// step 4, loop through the string and add to total
+
+const countLet = (string)=>{
+    total = 0;
+    const stringWithNoSpace = string.replace(/\s+/g, "");
+    for(let i = 0; i<stringWithNoSpace.length; i++){
+        total++;
+    }
+    console.log(total);
+};
+// countLet("I'm going to work");
+
+
+// 5-Write a function that will return True or False if a number is divisible by 3 & 5
+const divisableNum = (number)=>{
+    if(number % 3 === 0 && number % 5 === 0){
+        return true;
+    }
+    return false
+};
+// console.log(divisableNum(15));
 
 
 // 5-Vowel Counter: Write a function that takes a string as input and counts the number of vowels (a, e, i, o, u) in it. Add this count to a running total and return the updated total.
 
-
+const vowelChecker = (string)=> {
+    // step 1, convert the string to lowerCase.
+    const lowerCaseString  = string.toLowerCase();
+    let total = 0;
+    for(let i =0; i<lowerCaseString.length; i++){
+        // console.log(i)
+        if(lowerCaseString[i] == "a" || lowerCaseString[i] == "e" || lowerCaseString[i] == "i" || lowerCaseString[i] == "o" || lowerCaseString[i] == "u"){
+            total++
+        }
+    }
+    return total;
+};
+// console.log(vowelChecker("aaaaeiou"));
 
 // 6-Word Reverser: Build a function that takes a sentence (a string containing multiple words) as input and returns the sentence with the order of words reversed.
+const wordReverser = (sentence)=>{
+    // split the sentence/string into a words array.
+    const words = sentence.split(" ");
 
+    // reverse each word.
+    const reversedWords = words.reverse();
 
+    // join them back
+    const reversedSentence = reversedWords.join(" ");
+    return reversedSentence;
+};
+const originalSentence = "This is a sample sentence";
+const reversed = wordReverser(originalSentence);
+// console.log(reversed); 
 
 
 // 7-Palindrome Detector: Write a function that checks if a given string is a palindrome (reads the same forwards and backwards). Return True if it is, and False otherwise.

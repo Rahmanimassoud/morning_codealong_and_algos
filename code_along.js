@@ -132,7 +132,6 @@ const reversed = wordReverser(originalSentence);
 // 7-Palindrome Detector: Write a function that checks if a given string is a palindrome (reads the same forwards and backwards). Return True if it is, and False otherwise.
 
 
-
 // 8-Check temprature and change from C to f
 
 const tempInCelsius =(fahrenheit)=>{
@@ -143,13 +142,33 @@ const tempInCelsius =(fahrenheit)=>{
 
 
 
-// FUNCTIONS AND ARRAYS==========
+// MORE FUNCTIONS AND ARRAYS==========
 
 //1- Shopping List Organizer:
-// let shoppingList = ['Apples', 'Milk', 'Bread', 'Eggs'];
+let shoppingList = ['Apples', 'Milk', 'Bread', 'Eggs'];
 // Write a function that will loop through the list and describe each element.
 // Write a function that will add something to the list IF it is not already on the list. 
 // Write a function that will remove something from the list
+
+const shoppingListOrg = (list, newItem)=> {
+    let isPresent = false;
+
+    for(let i = 0; i<list.length; i++){
+        if(list[i] === newItem){
+            isPresent = true;
+            break;
+        }
+    }
+
+    if(!isPresent){
+        list.push(newItem)
+    }
+    return list;
+};
+const newList = shoppingListOrg(shoppingList, "Kiwi");
+
+console.log(newList);
+
 
 //2- Guest List Management: Develop an array to store the names of guests for an event. 
 // let guestList = ['Alice', 'Bob', 'Charlie'];
